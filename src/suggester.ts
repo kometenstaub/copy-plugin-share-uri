@@ -30,8 +30,6 @@ export class SearchModal extends FuzzySuggestModal<Promise<any[]>> {
 	focusInput() {
 		//@ts-ignore
 		document.getElementsByClassName('prompt-input')[0].focus();
-		//@ts-ignore
-		document.getElementsByClassName('prompt-input')[0].select();
 	}
 
 	async updateSuggestions() {
