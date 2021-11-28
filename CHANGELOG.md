@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/kometenstaub/copy-plugin-share-uri/compare/1.0.3...1.0.4) (2021-11-28)
+
+
+### Bug Fixes
+
+* :bug: correct minAppVersion ([a8b233d](https://github.com/kometenstaub/copy-plugin-share-uri/commit/a8b233df613c941570cf5e38aecee5abac90663f))
+
 ### [1.0.3](https://github.com/kometenstaub/copy-plugin-share-uri/compare/1.0.2...1.0.3) (2021-11-28)
 
 ### [1.0.2](https://github.com/kometenstaub/copy-plugin-share-uri/compare/1.0.1...1.0.2) (2021-11-28)
