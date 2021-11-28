@@ -12,8 +12,8 @@ export async function returnPluginJson(): Promise<PluginEntry[]> {
 }
 
 export async function copyShareUri(id: string): Promise<void> {
-	let uri = `<obsidian://show-plugin?id=${id}>`
+	let uri = `obsidian://show-plugin?id=${id}`
 	uri = encodeURI(uri)
-	await navigator.clipboard.writeText(uri)
+	await navigator.clipboard.writeText(`<${uri}>`)
 	new Notice('Copied the share link to the clipboard')
 }
