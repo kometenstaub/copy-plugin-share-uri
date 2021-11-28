@@ -1,7 +1,7 @@
-import {App, FuzzySuggestModal, Platform } from "obsidian";
-import type { PluginEntry } from "./interfaces";
-import type SharePluginUriPlugin from "./main";
-import { copyShareUri, returnPluginJson } from "./utils";
+import { App, FuzzyMatch, FuzzySuggestModal, Platform } from 'obsidian';
+import type { PluginEntry } from './interfaces';
+import type SharePluginUriPlugin from './main';
+import { copyShareUri, returnPluginJson } from './utils';
 
 export class SearchModal extends FuzzySuggestModal<Promise<any[]>> {
 	plugin: SharePluginUriPlugin;
@@ -9,12 +9,14 @@ export class SearchModal extends FuzzySuggestModal<Promise<any[]>> {
 
 	constructor(app: App, plugin: SharePluginUriPlugin) {
 		super(app);
-		this.plugin = plugin
+		this.plugin = plugin;
 		this.setPlaceholder('Please start typing...');
-		this.setInstructions([{
-			command: '↵',
-			purpose: 'to copy to the clipboard'
-		}])
+		this.setInstructions([
+			{
+				command: '↵',
+				purpose: 'to copy to the clipboard',
+			},
+		]);
 	}
 
 	onOpen() {
@@ -34,25 +36,40 @@ export class SearchModal extends FuzzySuggestModal<Promise<any[]>> {
 
 	async updateSuggestions() {
 		const { value } = this.inputEl;
-		this.suggestions = await returnPluginJson()
+		this.suggestions = await returnPluginJson();
 		//@ts-expect-error
-		await super.updateSuggestions()
+		await super.updateSuggestions();
 		//@ts-expect-error
 		this.suggestions = null;
 	}
 
-
 	//@ts-ignore
 	getItems(): PluginEntry[] {
-		return this.suggestions
+		return this.suggestions;
 	}
 	//@ts-ignore
 	getItemText(item: PluginEntry): string {
-		return item.name + ': ' + item.description
+		return item.name + ': ' + item.description + ' (' + item.author + ')';
 	}
 	//@ts-ignore
 	onChooseItem(item: PluginEntry, evt: MouseEvent | KeyboardEvent): void {
-		copyShareUri(item.id)
+		copyShareUri(item.id);
 	}
-	
+	//@ts-ignore
+	renderSuggestion(item: FuzzyMatch<PluginEntry>, el: HTMLElement): void {
+		const { name, description, author } = item.item;
+		const container = el.createDiv();
+		const nameEl = container.createEl('b', {
+			cls: 'plugin-share-uri-name',
+			text: name,
+		});
+		const authorEl = container.createDiv({
+			cls: 'plugin-share-uri-author',
+			text: ' (' + author + ')',
+		});
+		const descriptionEl = container.createDiv({
+			cls: 'plugin-share-uri-description',
+			text: description,
+		});
+	}
 }
