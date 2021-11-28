@@ -3,7 +3,7 @@
 	"name": "Share plugin link",
 	"version": "1.0.4",
 	"minAppVersion": "0.13.3",
-	"description": "Share the link to a plugin.",
+	"description": "Share the link for opening a plugin page in Obsidian.",
 	"author": "kometenstaub",
 	"authorUrl": "https://github.com/kometenstaub",
 	"isDesktopOnly": false
