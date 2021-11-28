@@ -33,7 +33,6 @@ export class SearchModal extends FuzzySuggestModal<Promise<PluginEntry[]>> {
 	}
 
 	async updateSuggestions() {
-		const { value } = this.inputEl;
 		this.suggestions = await returnPluginJson();
 		//@ts-expect-error
 		await super.updateSuggestions();
