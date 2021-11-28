@@ -1,10 +1,10 @@
 import { App, PluginSettingTab, Setting } from 'obsidian';
-import type TemplatePlugin from './main';
+import type SharePluginUriPlugin from './main';
 
-export default class TemplateSettingTab extends PluginSettingTab {
-    plugin: TemplatePlugin;
+export default class SharePluginUriSettingTab extends PluginSettingTab {
+    plugin: SharePluginUriPlugin;
 
-    constructor(app: App, plugin: TemplatePlugin) {
+    constructor(app: App, plugin: SharePluginUriPlugin) {
         super(app, plugin);
         this.plugin = plugin;
     }
@@ -19,17 +19,17 @@ export default class TemplateSettingTab extends PluginSettingTab {
             text: ' ... Settings',
         });
 
-        // keys for YAML
-        new Setting(containerEl)
-            .setName('')
-            .setDesc('')
-            .addText((text) => {
-                text.setPlaceholder('')
-                    .setValue(settings.homeNote)
-                    .onChange(async (value) => {
-                        settings.homeNote = value.trim()
-                        await this.plugin.saveSettings();
-                    });
-            });
+        // // keys for YAML
+        // new Setting(containerEl)
+        //     .setName('')
+        //     .setDesc('')
+        //     .addText((text) => {
+        //         text.setPlaceholder('')
+        //             .setValue(settings.homeNote)
+        //             .onChange(async (value) => {
+        //                 settings.homeNote = value.trim()
+        //                 await this.plugin.saveSettings();
+        //             });
+        //     });
     }
 }

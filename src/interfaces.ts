@@ -1,2 +1,2 @@
-export interface TemplatePlugin {
+export interface SharePluginUriSettings {
 }

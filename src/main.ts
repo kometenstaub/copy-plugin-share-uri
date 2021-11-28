@@ -1,37 +1,33 @@
 import { App, Plugin } from 'obsidian';
-// import type {} from './interfaces';
-import TemplateSettingTab from './settings';
+import type { SharePluginUriSettings } from './interfaces';
+// import SharePluginUriSettingTab from './settings';
 
-const DEFAULT_SETTINGS: TemplateSettings = {
-};
+const DEFAULT_SETTINGS: SharePluginUriSettings = {};
 
-
-export default class TemplatePlugin extends Plugin {
-    //@ts-ignore
-    settings: TemplateSettings;
+export default class SharePluginUriPlugin extends Plugin {
+    settings!: SharePluginUriSettings;
 
     async onload() {
-        console.log('loading ... plugin');
+        console.log('loading SharePluginUriPlugin plugin');
 
-        await this.loadSettings();
+        // await this.loadSettings();
 
-
-        this.addSettingTab(new TemplateSettingTab(this.app, this));
+        // this.addSettingTab(new SharePluginUriSettingTab(this.app, this));
     }
 
     onunload() {
-        console.log('unloading ... plugin');
+        console.log('unloading SharePluginUriPlugin plugin');
     }
 
-    async loadSettings() {
-        this.settings = Object.assign(
-            {},
-            DEFAULT_SETTINGS,
-            await this.loadData()
-        );
-    }
+    // async loadSettings() {
+    //     this.settings = Object.assign(
+    //         {},
+    //         DEFAULT_SETTINGS,
+    //         await this.loadData()
+    //     );
+    // }
 
-    async saveSettings() {
-        await this.saveData(this.settings);
-    }
+    // async saveSettings() {
+    //     await this.saveData(this.settings);
+    // }
 }
