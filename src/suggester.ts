@@ -56,15 +56,15 @@ export class SearchModal extends FuzzySuggestModal<Promise<PluginEntry[]>> {
 	renderSuggestion(item: FuzzyMatch<PluginEntry>, el: HTMLElement): void {
 		const { name, description, author } = item.item;
 		const container = el.createDiv();
-		const nameEl = container.createEl('b', {
+		container.createEl('b', {
 			cls: 'plugin-share-uri-name',
 			text: name,
 		});
-		const authorEl = container.createDiv({
+		container.createDiv({
 			cls: 'plugin-share-uri-author',
 			text: ' (' + author + ')',
 		});
-		const descriptionEl = container.createDiv({
+		container.createDiv({
 			cls: 'plugin-share-uri-description',
 			text: description,
 		});
