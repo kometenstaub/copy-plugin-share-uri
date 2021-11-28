@@ -3,7 +3,7 @@ import type { PluginEntry } from './interfaces';
 import type SharePluginUri from './main';
 import { copyShareUri, returnPluginJson } from './utils';
 
-export class SearchModal extends FuzzySuggestModal<Promise<any[]>> {
+export class SearchModal extends FuzzySuggestModal<Promise<PluginEntry[]>> {
 	plugin: SharePluginUri;
 	suggestions!: PluginEntry[];
 
