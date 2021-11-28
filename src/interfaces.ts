@@ -1,6 +1,3 @@
-// export interface SharePluginUriSettings {
-// }
-
 //prettier-ignore
 export interface PluginEntry {
     id:          string;
