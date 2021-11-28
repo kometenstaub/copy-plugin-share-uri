@@ -1,13 +1,13 @@
 import { Notice, request, RequestParam } from 'obsidian';
-import type { PluginArray } from './interfaces';
+import type { PluginEntry } from './interfaces';
 
-export async function returnPluginJson(): Promise<PluginArray[]> {
+export async function returnPluginJson(): Promise<PluginEntry[]> {
     const requestObj: RequestParam = {
         url: 'https://raw.githubusercontent.com/obsidianmd/obsidian-releases/master/community-plugins.json',
     };
 
     const json = await request(requestObj);
-    const jsonArray: PluginArray[] = JSON.parse(json);
+    const jsonArray: PluginEntry[] = JSON.parse(json);
     return jsonArray;
 }
 

@@ -1,11 +1,11 @@
 import {App, FuzzySuggestModal, Platform } from "obsidian";
-import type { PluginArray } from "./interfaces";
+import type { PluginEntry } from "./interfaces";
 import type SharePluginUriPlugin from "./main";
 import { copyShareUri, returnPluginJson } from "./utils";
 
 export class SearchModal extends FuzzySuggestModal<Promise<any[]>> {
 	plugin: SharePluginUriPlugin;
-	suggestions!: PluginArray[];
+	suggestions!: PluginEntry[];
 
 	constructor(app: App, plugin: SharePluginUriPlugin) {
 		super(app);
@@ -43,15 +43,15 @@ export class SearchModal extends FuzzySuggestModal<Promise<any[]>> {
 
 
 	//@ts-ignore
-	getItems(): PluginArray[] {
+	getItems(): PluginEntry[] {
 		return this.suggestions
 	}
 	//@ts-ignore
-	getItemText(item: PluginArray): string {
+	getItemText(item: PluginEntry): string {
 		return item.name + ': ' + item.description
 	}
 	//@ts-ignore
-	onChooseItem(item: PluginArray, evt: MouseEvent | KeyboardEvent): void {
+	onChooseItem(item: PluginEntry, evt: MouseEvent | KeyboardEvent): void {
 		copyShareUri(item.id)
 	}
 	

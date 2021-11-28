@@ -2,7 +2,7 @@
 // }
 
 //prettier-ignore
-export interface PluginArray {
+export interface PluginEntry {
     id:          string;
     name:        string;
     author:      string;
