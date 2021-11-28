@@ -1,10 +1,10 @@
 import { App, PluginSettingTab, Setting } from 'obsidian';
-import type SharePluginUriPlugin from './main';
+import type SharePluginUri from './main';
 
 export default class SharePluginUriSettingTab extends PluginSettingTab {
-    plugin: SharePluginUriPlugin;
+    plugin: SharePluginUri;
 
-    constructor(app: App, plugin: SharePluginUriPlugin) {
+    constructor(app: App, plugin: SharePluginUri) {
         super(app, plugin);
         this.plugin = plugin;
     }

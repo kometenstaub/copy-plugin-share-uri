@@ -5,11 +5,11 @@ import { SearchModal } from './suggester';
 
 // const DEFAULT_SETTINGS: SharePluginUriSettings = {};
 
-export default class SharePluginUriPlugin extends Plugin {
+export default class SharePluginUri extends Plugin {
     // settings!: SharePluginUriSettings;
 
     async onload() {
-        console.log('loading SharePluginUriPlugin plugin');
+        console.log('loading SharePluginUri plugin');
 
         this.addCommand({
             id: 'copy-plugin-share-uri',
@@ -26,7 +26,7 @@ export default class SharePluginUriPlugin extends Plugin {
     }
 
     onunload() {
-        console.log('unloading SharePluginUriPlugin plugin');
+        console.log('unloading SharePluginUri plugin');
 
     }
 

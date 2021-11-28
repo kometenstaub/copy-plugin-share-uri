@@ -1,13 +1,13 @@
 import { App, FuzzyMatch, FuzzySuggestModal, Platform } from 'obsidian';
 import type { PluginEntry } from './interfaces';
-import type SharePluginUriPlugin from './main';
+import type SharePluginUri from './main';
 import { copyShareUri, returnPluginJson } from './utils';
 
 export class SearchModal extends FuzzySuggestModal<Promise<any[]>> {
-	plugin: SharePluginUriPlugin;
+	plugin: SharePluginUri;
 	suggestions!: PluginEntry[];
 
-	constructor(app: App, plugin: SharePluginUriPlugin) {
+	constructor(app: App, plugin: SharePluginUri) {
 		super(app);
 		this.plugin = plugin;
 		this.setPlaceholder('Please start typing...');
