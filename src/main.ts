@@ -1,15 +1,25 @@
 import { App, Plugin } from 'obsidian';
-import type { SharePluginUriSettings } from './interfaces';
+// import type { SharePluginUriSettings } from './interfaces';
 // import SharePluginUriSettingTab from './settings';
+import { SearchModal } from './suggester';
 
-const DEFAULT_SETTINGS: SharePluginUriSettings = {};
+// const DEFAULT_SETTINGS: SharePluginUriSettings = {};
 
 export default class SharePluginUriPlugin extends Plugin {
-    settings!: SharePluginUriSettings;
+    // settings!: SharePluginUriSettings;
 
     async onload() {
         console.log('loading SharePluginUriPlugin plugin');
 
+        this.addCommand({
+            id: 'copy-plugin-share-uri',
+            name: 'Copy Share URI',
+            callback: () => {
+                const copyLink = new SearchModal(this.app, this).open()
+                return copyLink
+
+            }
+        })
         // await this.loadSettings();
 
         // this.addSettingTab(new SharePluginUriSettingTab(this.app, this));
@@ -17,7 +27,9 @@ export default class SharePluginUriPlugin extends Plugin {
 
     onunload() {
         console.log('unloading SharePluginUriPlugin plugin');
+
     }
+
 
     // async loadSettings() {
     //     this.settings = Object.assign(

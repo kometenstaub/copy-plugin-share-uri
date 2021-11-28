@@ -1,9 +1,9 @@
 {
-	"id": "",
-	"name": "",
+	"id": "copy-plugin-share-uri",
+	"name": "Share plugin link",
 	"version": "0.0.0",
 	"minAppVersion": "0.12.19",
-	"description": "",
+	"description": "Share the link to a plugin.",
 	"author": "kometenstaub",
 	"authorUrl": "https://github.com/kometenstaub",
 	"isDesktopOnly": false
