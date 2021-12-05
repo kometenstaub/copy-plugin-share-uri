@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/kometenstaub/copy-plugin-share-uri/compare/1.0.7...1.1.0) (2021-12-05)
+
+
+### Features
+
+* pre-populate suggestions without typing ([e5cce33](https://github.com/kometenstaub/copy-plugin-share-uri/commit/e5cce33f628f906222caa092838ce824d3ffe053))
+
 ### [1.0.7](https://github.com/kometenstaub/copy-plugin-share-uri/compare/1.0.6...1.0.7) (2021-11-28)
 
 ### [1.0.6](https://github.com/kometenstaub/copy-plugin-share-uri/compare/1.0.5...1.0.6) (2021-11-28)
