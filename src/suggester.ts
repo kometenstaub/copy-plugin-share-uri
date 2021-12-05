@@ -19,12 +19,15 @@ export class SearchModal extends FuzzySuggestModal<Promise<PluginEntry[]>> {
 		]);
 	}
 
-	onOpen() {
+	async onOpen() {
 		if (Platform.isDesktopApp) {
 			this.focusInput();
 		} else if (Platform.isMobileApp) {
 			setTimeout(this.focusInput, 400);
 		}
+		this.suggestions = await returnPluginJson();
+		// pre-populate suggestions without typing
+		await this.updateSuggestions()
 	}
 
 	focusInput() {
@@ -32,12 +35,13 @@ export class SearchModal extends FuzzySuggestModal<Promise<PluginEntry[]>> {
 		document.getElementsByClassName('prompt-input')[0].focus();
 	}
 
+	// necessary because we are getting the suggestions asynchronously
 	async updateSuggestions() {
-		this.suggestions = await returnPluginJson();
 		//@ts-expect-error
 		await super.updateSuggestions();
-		//@ts-expect-error
-		this.suggestions = null;
+		// normally set it to null if we're getting new suggestions, but this time they stay the same
+		// because we're not fetching new data on every keystroke
+		//this.suggestions = null;
 	}
 
 	//@ts-ignore
