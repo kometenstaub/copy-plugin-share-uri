@@ -1,6 +1,6 @@
 {
 	"name": "Copy Plugin Share URI",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Copies the URI for opening a plugin page in Obsidian.",
 	"main": "src/main.ts",
 	"scripts": {

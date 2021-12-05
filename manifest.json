@@ -1,7 +1,7 @@
 {
 	"id": "copy-plugin-share-uri",
 	"name": "Share plugin link",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"minAppVersion": "0.13.3",
 	"description": "Share the link for opening a plugin page in Obsidian.",
 	"author": "kometenstaub",
